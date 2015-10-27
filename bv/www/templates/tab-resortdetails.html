@@ -1,0 +1,26 @@
+<ion-view view-title="{{resort.name}}">
+	<ion-content scrollbar-x="false" scrollbar-y="false" class="has-header">
+		<ion-slide-box show-pager="false" >
+			<ion-slide ng-repeat="image in resortGalleryImages">
+				<img ng-src="{{image.src}}" ng-click="showGallery($index)" class="gallery-image">
+			</ion-slide>
+		</ion-slide-box>
+
+		<div class="padding">
+			<h2>{{resort.name}}</h2>
+			<address>{{resort.street1}}
+				<br>{{resort.city}}, {{resort.state}} {{resort.postalCode}}</address>
+			<!-- 
+				To enable these buttons, remove "disabled" class below"
+			-->
+			<div class="button-bar">
+				<a class="button button-small" id="resort-floorplans" ng-click="showFloorplans(0)">Floorplans</a>
+				<a class="button button-small disabled" id="resort-map" href="">Resort Map</a>
+				<a class="button button-small " id="resort-google-map" href="#/tab/resortdetailsmap/{{resort.code}}">Area Map</a>
+			</div><br>
+
+			<div ng-bind-html="resort.content" />
+
+		</div>
+	</ion-content>
+</ion-view>

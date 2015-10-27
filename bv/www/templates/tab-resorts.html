@@ -1,0 +1,16 @@
+<ion-view view-title="{{state.name}}">
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="resort in resorts" type="item-text-wrap" href="#/tab/resortdetails/{{resort.code}}" class="item-text-wrap item-thumbnail-left item-icon-right">
+				<img ng-src="{{resort.thumbnail}}">
+				<h2>{{resort.name}}</h2>
+				<p>{{resort.city}}, {{resort.state}}<span class="designation {{resort.type}}"></span></p>
+				<i class="icon ion-chevron-right icon-accessory"></i>
+
+				<!-- ion-option-button class="button-positive">Book</ion-option-button -->
+
+			</ion-item>
+		</ion-list>
+		<div ng-hide="resorts.length" class="no-resorts">No resorts in {{state.name}} found.</div>
+	</ion-content>
+</ion-view>

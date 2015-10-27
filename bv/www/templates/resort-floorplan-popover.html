@@ -1,0 +1,17 @@
+<div class="modal image-modal modal-bg-black">
+
+	<header class="bar bar-header">
+		<h1 class="title">&nbsp;</h1>
+		<div class="button button-clear" ng-click="closeModal()">
+			<span class="icon ion-close"></span>
+		</div>
+	</header>
+
+	<ion-slide-box on-slide-changed="slideChanged(index)" show-pager="false" active-slide="activeSlide">
+		<ion-slide ng-repeat="image in resortFloorplanImages">
+			<img ng-src="{{image.src}}" class="fullscreen-image">
+			<p class="caption">{{resort.name}} 
+				<br>{{image.caption}}</p>
+		</ion-slide>
+	</ion-slide-box>
+</div>

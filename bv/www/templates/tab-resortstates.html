@@ -1,0 +1,16 @@
+<ion-view view-title="Resort States">
+	<ion-content scrollbar-x="false" scrollbar-y="true" has-header="true" has-footer="true" on-infinite-scroll="addMoreStates">
+		<ion-list>
+			<ion-item class="item-icon-right" ng-repeat="resortState in resortStates" type="item-text-wrap" href="#/tab/resorts/{{resortState.abbrev}}">
+        		{{resortState.name}}
+				<span class="badge">{{resortState.count}}</span>
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</ion-item>
+		</ion-list>
+		<div ng-hide="resortStates.length">No states found</div>
+
+		<!-- <ion-infinite-scroll on-infinite="loadMoreStates()" distance="20%">
+		</ion-infinite-scroll> -->
+
+	</ion-content>
+</ion-view>
